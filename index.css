@@ -1,0 +1,177 @@
+:root {
+    --clr-darkgreyblue: hsl(217, 19%, 35%);
+    --clr-darkblue: hsl(214, 17%, 51%);
+    --clr-greyblue: hsl(212, 23%, 69%);
+    --clr-lightgreyblue: hsl(210, 46%, 95%);
+    --ff-manrope: "Manrope";
+    --fs-p: 13px;
+    --fw-light: 500;
+    --fw-bold: 700;
+}
+
+body {
+    background-color: var(--clr-lightgreyblue);
+    font-family: var(--ff-manrope);
+    font-size: var(--fs-p);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 230px;
+}
+
+main {
+    display: flex;
+    background-color: white;
+    width: 732px;
+    border-radius: 15px;
+    height: 280px;
+}
+
+.photo img {
+    width: 268px;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+
+.info h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--clr-darkgreyblue);
+    margin-bottom: 0;
+}
+
+.info > p {
+    color: var(--clr-darkblue);
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-weight: 350;
+    line-height: 19px;
+}
+
+.bottom-bar {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-bar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.namedate {
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: left;
+    line-height: 7px;
+    margin-left: 15px;
+}
+
+.namedate .name {
+    font-weight: 600;
+    color: var(--clr-darkgreyblue)
+}
+
+.namedate .date {
+    color: var(--clr-greyblue)
+}
+
+.share-btn {
+    grid-area: 1 / 4 / 2 / 5;
+    background-color: var(--clr-lightgreyblue);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-btn img {
+    width: 15px;
+    height: 15px;
+}
+
+/* (A) SPEECH BOX */
+.speech {
+    color: #fff;
+    background: var(--clr-darkgreyblue);
+    padding: 5px 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+.speech p {
+    font-size: 1em;
+    font-weight: 100;
+    text-transform: full-width;
+}
+
+  /* (B) USE ::AFTER TO CREATE THE "CALLOUT" */
+.speech::after {
+    display: block; width: 0; content: "";
+    border: 15px solid transparent;
+}
+
+/* (C) "CALLOUT" DIRECTIONS */
+
+.speech.down::after {
+    border-top-color: var(--clr-darkgreyblue);
+    border-bottom: 0;
+}
+
+/* (D) POSITION THE CALLOUT */
+.relative-anchor {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.speech {
+    position: absolute;
+    left: 34px;
+    bottom: 48px;
+    box-shadow:  0px 34px 38px -23px rgba(170,179,189,0.83);
+}
+
+.speech::after { position: absolute; }
+
+.speech.down::after {
+    bottom: -15px; left: calc(50% - 15px);
+}
+
+.speech img {
+    width: 20px;
+    height: 20px;
+}
+
+.unhovered {
+    display: none;
+}
+
+.hovered {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
